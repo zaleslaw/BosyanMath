@@ -1,0 +1,87 @@
+package primitives.etl;
+
+/**
+ * The names of popular datasets used in examples.
+ */
+public enum MLSandboxDatasets {
+    /** The full Iris dataset from Machine Learning Repository. */
+    IRIS("src/main/resources/datasets/iris.txt", false, "\t"),
+
+    /** The Titanic dataset from Kaggle competition. */
+    TITANIC("src/main/resources/datasets/titanic.csv", true, ";"),
+
+    /** The 1st and 2nd classes from the Iris dataset. */
+    TWO_CLASSED_IRIS("src/main/resources/datasets/two_classed_iris.csv", false, "\t"),
+
+    /** The dataset is about different computers' properties based on https://archive.ics.uci.edu/ml/datasets/Computer+Hardware. */
+    CLEARED_MACHINES("src/main/resources/datasets/cleared_machines.csv", false, ";"),
+
+    /**
+     * The health data is related to death rate based on; doctor availability, hospital availability,
+     * annual per capita income, and population density people per square mile.
+     */
+    MORTALITY_DATA("src/main/resources/datasets/mortalitydata.csv", false, ";"),
+
+    /**
+     * The preprocessed Glass dataset from the Machine Learning Repository https://archive.ics.uci.edu/ml/datasets/Glass+Identification
+     * There are 3 classes with labels: 1 {building_windows_float_processed}, 3 {vehicle_windows_float_processed}, 7 {headlamps}.
+     * Feature names: 'Na-Sodium', 'Mg-Magnesium', 'Al-Aluminum', 'Ba-Barium', 'Fe-Iron'.
+     */
+    GLASS_IDENTIFICATION("src/main/resources/datasets/glass_identification.csv", false, ";"),
+
+    /** The Wine recognition data. Could be found <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/wine/">here</a>. */
+    WINE_RECOGNITION("src/main/resources/datasets/wine.txt", false, ","),
+
+    /** The Boston house-prices dataset. Could be found <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/housing/">here</a>. */
+    BOSTON_HOUSE_PRICES("src/main/resources/datasets/boston_housing_dataset.txt", false, ","),
+
+    /** Example from book Barber D. Bayesian reasoning and machine learning. Chapter 10. */
+    ENGLISH_VS_SCOTTISH("src/main/resources/datasets/english_vs_scottish_binary_dataset.csv", true, ","),
+
+    /** Wholesale customers dataset. Could be found <a href="https://archive.ics.uci.edu/ml/datasets/Wholesale+customers">here</a>. */
+    WHOLESALE_CUSTOMERS("src/main/resources/datasets/wholesale_customers.csv", true, ","),
+
+    /** Fraud detection problem [part of whole dataset]. Could be found <a href="https://www.kaggle.com/mlg-ulb/creditcardfraud/">here</a>. */
+    FRAUD_DETECTION("src/main/resources/datasets/fraud_detection.csv", false, ",");
+
+    /** Filename. */
+    private final String filename;
+
+    /** The csv file has header. */
+    private final boolean hasHeader;
+
+    /** The separator between words. */
+    private final String separator;
+
+    /**
+     * @param filename  Filename.
+     * @param hasHeader The csv file has header.
+     * @param separator The special sign to separate the line on words.
+     */
+    MLSandboxDatasets(final String filename, boolean hasHeader, String separator) {
+        this.filename = filename;
+        this.hasHeader = hasHeader;
+        this.separator = separator;
+    }
+
+    /**
+     *
+     */
+    public String getFileName() {
+        return filename;
+    }
+
+    /**
+     *
+     */
+    public boolean hasHeader() {
+        return hasHeader;
+    }
+
+    /**
+     *
+     */
+    public String getSeparator() {
+        return separator;
+    }
+}

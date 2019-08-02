@@ -1,0 +1,1 @@
+The main goal is creation of alternative to scikit-learn or smile for Java world with the most efficient algorithms.
